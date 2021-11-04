@@ -36,7 +36,7 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_runeword
+                R.id.nav_home, R.id.nav_runeword, R.id.nav_rune
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

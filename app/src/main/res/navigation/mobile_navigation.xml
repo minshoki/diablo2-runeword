@@ -16,4 +16,10 @@
         android:name="shoki.com.diabloruneword.ui.runeword.RuneWordFragment"
         android:label="@string/menu_runeword"
         tools:layout="@layout/fragment_runeword" />
+    <fragment
+        android:id="@+id/nav_rune"
+        android:name="shoki.com.diabloruneword.ui.rune.RuneFragment"
+        android:label="@string/menu_rune"
+        tools:layout="@layout/fragment_rune" />
+
 </navigation>

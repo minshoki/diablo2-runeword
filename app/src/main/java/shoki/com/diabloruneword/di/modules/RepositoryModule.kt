@@ -8,8 +8,11 @@ import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
 import dagger.hilt.components.SingletonComponent
+import shoki.com.diabloruneword.db.rune.RuneDatabase
 import shoki.com.diabloruneword.repository.HomeRepository
+import shoki.com.diabloruneword.repository.RuneRepository
 import shoki.com.diabloruneword.repository.RuneWordRepository
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @InstallIn(ViewModelComponent::class)
@@ -26,5 +29,11 @@ object RepositoryModule {
     @Provides
     fun provideRuneWordRepository(): RuneWordRepository {
         return RuneWordRepository()
+    }
+
+    @ViewModelScoped
+    @Provides
+    fun provideRuneRepository(runeDatabase: RuneDatabase): RuneRepository {
+        return RuneRepository(runeDao = runeDatabase.runeDao())
     }
 }

@@ -12,5 +12,10 @@
             android:id="@+id/nav_runeword"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_runeword" />
+
+        <item
+            android:id="@+id/nav_rune"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_rune" />
     </group>
 </menu>
