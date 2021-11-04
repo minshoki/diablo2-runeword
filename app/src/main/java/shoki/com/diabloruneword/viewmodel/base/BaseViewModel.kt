@@ -1,4 +1,4 @@
-package shoki.com.diabloruneword.ui.base
+package shoki.com.diabloruneword.viewmodel.base
 
 import androidx.lifecycle.ViewModel
 

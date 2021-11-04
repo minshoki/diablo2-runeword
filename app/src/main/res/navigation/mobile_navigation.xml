@@ -11,4 +11,9 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
+    <fragment
+        android:id="@+id/nav_runeword"
+        android:name="shoki.com.diabloruneword.ui.runeword.RuneWordFragment"
+        android:label="@string/menu_runeword"
+        tools:layout="@layout/fragment_runeword" />
 </navigation>
