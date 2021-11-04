@@ -6,40 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import shoki.com.diabloruneword.R
 import shoki.com.diabloruneword.databinding.FragmentHomeBinding
+import shoki.com.diabloruneword.ui.base.BaseBindingFragment
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseBindingFragment<FragmentHomeBinding>() {
 
-    private lateinit var homeViewModel: HomeViewModel
-    private var _binding: FragmentHomeBinding? = null
+    private val homeViewModel: HomeViewModel by hiltNavGraphViewModels(R.id.mobile_navigation)
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    override val layoutId: Int
+        get() = R.layout.fragment_home
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun initView() {
+        super.initView()
+        homeViewModel
     }
 }
