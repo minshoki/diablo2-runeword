@@ -1,4 +1,4 @@
-package shoki.com.diabloruneword.db.rune
+package shoki.com.diabloruneword.db
 
 import android.content.Context
 import androidx.room.ColumnInfo

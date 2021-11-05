@@ -1,0 +1,96 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 7,
+    "identityHash": "c321d5c37d851a826c4477158c95d842",
+    "entities": [
+      {
+        "tableName": "rune",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`index` INTEGER NOT NULL, `kor_name` TEXT NOT NULL, `en_name` TEXT NOT NULL, `kor_weapon_effect` TEXT NOT NULL, `en_weapon_effect` TEXT NOT NULL, `kor_etc_effect` TEXT NOT NULL, `en_etc_effect` TEXT NOT NULL, `image_path` TEXT NOT NULL, PRIMARY KEY(`index`))",
+        "fields": [
+          {
+            "fieldPath": "index",
+            "columnName": "index",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "korName",
+            "columnName": "kor_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enName",
+            "columnName": "en_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "korWeaponEffect",
+            "columnName": "kor_weapon_effect",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enWeaponEffect",
+            "columnName": "en_weapon_effect",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "korEtcEffect",
+            "columnName": "kor_etc_effect",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enEtcEffect",
+            "columnName": "en_etc_effect",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imagePath",
+            "columnName": "image_path",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "index"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "rune_word",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`index` INTEGER NOT NULL, PRIMARY KEY(`index`))",
+        "fields": [
+          {
+            "fieldPath": "index",
+            "columnName": "index",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "index"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c321d5c37d851a826c4477158c95d842')"
+    ]
+  }
+}

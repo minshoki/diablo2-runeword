@@ -1,6 +1,6 @@
 package shoki.com.diabloruneword.model
 
-import shoki.com.diabloruneword.db.rune.RuneEntity
+import shoki.com.diabloruneword.db.RuneEntity
 
 data class RuneModel(
     val index: Int,

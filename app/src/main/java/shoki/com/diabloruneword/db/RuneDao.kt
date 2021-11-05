@@ -1,4 +1,4 @@
-package shoki.com.diabloruneword.db.rune
+package shoki.com.diabloruneword.db
 
 import androidx.room.Dao
 import androidx.room.Insert
