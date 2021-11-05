@@ -18,12 +18,12 @@ data class RuneModel(
                     en = entity.enName
                 ),
                 weaponEffect = MultilingualModel(
-                    kor = entity.korWeaponEffect,
-                    en = entity.enWeaponEffect
+                    kor = entity.korWeaponEffect.replace("/", "\n").replace(",", "\n"),
+                    en = entity.enWeaponEffect.replace("/", "\n").replace(",", "\n")
                 ),
                 etcEffect = MultilingualModel(
-                    kor = entity.korEtcEffect,
-                    en = entity.enEtcEffect
+                    kor = entity.korEtcEffect.replace("/", "\n").replace(",", "\n"),
+                    en = entity.enEtcEffect.replace("/", "\n").replace(",", "\n")
                 )
             )
         }
