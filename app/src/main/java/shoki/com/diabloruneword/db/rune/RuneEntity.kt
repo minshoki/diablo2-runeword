@@ -27,12 +27,17 @@ data class RuneEntity(
 
     companion object {
         fun createRunes(context: Context): List<RuneEntity> {
-            context.openFileOutput("rune.json", Context.MODE_PRIVATE).use {
+            context.openFileOutput("rune14.json", Context.MODE_PRIVATE).use {
                 val input = context.assets.open("rune.json")
                 it.write(input.readBytes())
             }
-            val data = context.openFileInput("rune.json").bufferedReader().readLines().toString()
-            val jsonArray = JSONArray(data)
+            val data = context.openFileInput("rune14.json").bufferedReader().readLines().toString()
+            val jsonArray = JSONArray(data.replace("\n","")
+                .replace(",,", ",")
+                .replace(", ]]", "]")
+                .replace("[[", "[")
+                .replace(", }]", "}]")
+            )
             return (1..jsonArray.length()).map { index ->
                 val rune = jsonArray.getJSONObject(index - 1)
                 RuneEntity(
