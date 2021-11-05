@@ -22,35 +22,4 @@ data class RuneEntity(
     @ColumnInfo(name = "en_etc_effect") val enEtcEffect: String,
 
     @ColumnInfo(name = "image_path") val imagePath: String
-) {
-
-
-    companion object {
-        fun createRunes(context: Context): List<RuneEntity> {
-            context.openFileOutput("rune14.json", Context.MODE_PRIVATE).use {
-                val input = context.assets.open("rune.json")
-                it.write(input.readBytes())
-            }
-            val data = context.openFileInput("rune14.json").bufferedReader().readLines().toString()
-            val jsonArray = JSONArray(data.replace("\n","")
-                .replace(",,", ",")
-                .replace(", ]]", "]")
-                .replace("[[", "[")
-                .replace(", }]", "}]")
-            )
-            return (1..jsonArray.length()).map { index ->
-                val rune = jsonArray.getJSONObject(index - 1)
-                RuneEntity(
-                    index = index,
-                    korName = rune.getString("이름"),
-                    enName = rune.getString("이름"),
-                    korWeaponEffect = rune.getString("무기장착시"),
-                    enWeaponEffect = rune.getString("무기장착시"),
-                    korEtcEffect = rune.getString("기타 장착시"),
-                    enEtcEffect = rune.getString("기타 장착시"),
-                    imagePath = ""
-                )
-            }.toList()
-        }
-    }
-}
+)
